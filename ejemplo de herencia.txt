@@ -1,0 +1,59 @@
+public class Persona {
+    private String nombre;
+    private String apellidos;
+    private int edad;
+
+    //Constructor
+
+    public Persona (String nombre, String apellidos, int edad) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.edad = edad;                   }
+
+    //Métodos
+
+    public String getNombre () { return nombre;  }
+    public String getApellidos () { return apellidos;  }
+    public int getEdad () { return edad;   }
+
+} //Cierre de la clase
+
+
+//Código de la clase profesor, subclase de la clase Persona
+
+public class Profesor extends Persona {
+
+    //Campos específicos de la subclase.
+
+    private String IdProfesor;
+    
+    //Constructor de la subclase
+
+    public Profesor (String nombre, String apellidos, int edad) {
+        super(nombre, apellidos, edad); IdProfesor = "Unknown";   } 
+    //Cierre del constructor
+
+ 
+
+    //Métodos específicos de la subclase
+
+    public void setIdProfesor (String IdProfesor) { this.IdProfesor = IdProfesor;   }
+    public String getIdProfesor () { return IdProfesor;   }
+    public void mostrarNombreApellidosYCarnet() {
+        System.out.println ("Profesor de nombre: " + getNombre() + " " +  getApellidos() +
+        		                             " con Id de profesor: " + getIdProfesor() ); }
+
+ 
+
+} //Cierre de la clase
+
+
+public class TestHerencia1 {
+
+    public static void main (String [ ] Args) {
+        Profesor profesor1 = new Profesor ("Santiago", "Castro Acosta", 33);
+        profesor1.setIdProfesor("Prof 22-387-11");
+        profesor1.mostrarNombreApellidosYCarnet();}
+
+} //Cierre de la clase
+
